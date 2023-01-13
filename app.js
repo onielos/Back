@@ -9,6 +9,10 @@ var port = process.env.PORT || 4201
 // inicializa nuestras rutas 
 var cliente_route = require('./routes/cliente.routes')
 var admin_route = require('./routes/admin.routes')
+var etiqueta_route = require('./routes/etiqueta.routes')
+var producto_route= require('./routes/producto.routes')
+
+const { application } = require('express')
 mongoose.set('strictQuery',false);
 mongoose.connect('mongodb://127.0.0.1:27017/tienda',{useNewUrlParser: true},(err,res)=>{
     if(err){
@@ -37,5 +41,6 @@ app.use((req,res,next)=>{
 
 app.use('/api',cliente_route)
 app.use('/api',admin_route)
-
+app.use('/api',etiqueta_route)
+app.use('/api',producto_route)
 module.exports = app;

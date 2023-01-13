@@ -1,6 +1,6 @@
 'use strict'
 
-var Admin = require('../models/admin.models');
+var Admin = require('../models/Admin.model');
 var bcrypt = require('bcrypt-nodejs')
 var jwt = require('../helpers/jwt')
 
